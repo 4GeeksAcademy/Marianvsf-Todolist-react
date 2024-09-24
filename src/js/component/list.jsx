@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const List = () => {
     const [task, setTask] = useState("");
@@ -16,19 +16,22 @@ const List = () => {
     
     const deleteItem = (index) => {
       setNewTask(newTask.filter((_, i) => i !== index));
+
     };
       return (
-          <div>
-            <ul>
-             
+          <div style={{width: "500px", margin:"auto"}}>
+            <ul className="list-group ">
              <input type="text" value={task} 
               onKeyDown={handleSubmit} 
-              onChange={(e) => setTask(e.target.value)} />
+              onChange={(e) => setTask(e.target.value)} placeholder={task== "" ? "What needs to be done?" : task } />
               {newTask.map((item, index) => (  
-            <li key={index}>{item}</li>
+            <li className="list list-group-item list-group-item-light text-start" key={index} 
+            style={{ display: 'flex', justifyContent: 'space-between' }}>{item}
+            <button className="btn btn-sm delete-button"
+            onClick={() => deleteItem(index)}>x</button></li>
               ))}
-            <button className="btn btn-sm delete-button" onClick={() => deleteItem(index)}>X</button>
-            <li className="count list-group-item text-start">{newTask.length} items left</li>
+            <li className="count list-group-item text-start"
+            style={{color: "gray"}}>{newTask.length} items left</li>
             </ul>
           </div>
         );

@@ -1,12 +1,36 @@
+h1{
+    font-size: 90px;
+    color: lightgrey;
+}
+body {
+    background-color: rgb(239, 239, 239);
+}
+ul {
+    list-style: none;
+    justify-content: left;
+    border-radius: 0%;
+    border: gray;
+}
+input {
+    border: none;
+    height: 50px;
+    font-size: 25px;
+    padding: 30px;
+    color: grey;
+}
+.list {
+    height: 50px;
+    font-size: 25px;
+    padding-left: 30px;
+}
+.list-group-item {
+    box-shadow: 0px 10px 0px -4px white, 0px 20px 0px -8px #fffefe, 0px 20px 20px 20px rgba(255, 255, 255, 0);
+}
+.delete-button {
+    color: rgba(158, 105, 105, 0.548);
+}
 
-/* 
-
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
-
-*/
+/*display: none;
+.delete-button.hovered {
+    display: inline-block; 
+}*/
